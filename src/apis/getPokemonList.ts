@@ -13,7 +13,7 @@ interface Response {
   results: ListItem[]
 }
 
-export const getPocketmonList = () => {
+export const getPoketmonList = () => {
   return Api.get<{
     limit: number;
     offset: number;
