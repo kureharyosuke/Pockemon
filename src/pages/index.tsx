@@ -8,12 +8,14 @@ interface HomeProps {
 }
 
 const Home = ({ pokemonList }: HomeProps) => {
+  return (
   <>
     <Head>
       <title>Pokemon World</title>
     </Head>
     <Cards pokemonList={pokemonList}/>
   </>
+  )
 }
 
 export const getStaticProps = async () => {
