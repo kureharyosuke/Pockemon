@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 
-type Props = {
+export type Props = {
   children: React.ReactNode
   onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
+  theme?: 'primary' | 'secondary' | 'tertiary'
 }
 
 const Btn: React.FC<Props> = ({
@@ -14,6 +15,10 @@ const Btn: React.FC<Props> = ({
     {children}
   </Button>
   ) 
+}
+
+Btn.defaultProps = {
+  theme : 'primary'
 }
 
 export const Button = styled.button`
@@ -38,5 +43,7 @@ export const Button = styled.button`
     background: #12b886;
   }
 `;
+
+
 
 export default Btn;
