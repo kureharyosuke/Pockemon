@@ -1,6 +1,7 @@
 import { getPoketmonList } from '../apis/getPokemonList';
 import { PokemonListItem } from '../components/Card';
 import { Cards } from '../components/Cards';
+
 import Head from 'next/head'
 
 interface HomeProps {

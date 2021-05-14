@@ -13,13 +13,14 @@
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^11.2.0",
     "@emotion/core": "^11.0.0",
-    "@emotion/styled": "^11.3.0",
     "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "axios": "^0.21.1",
     "next": "10.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-query": "^3.16.0"
+    "react-query": "^3.16.0",
+    "react-query-devtools": "^2.6.3"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
