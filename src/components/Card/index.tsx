@@ -1,6 +1,7 @@
-import { ListItem } from '../../apis/getPokemonList'
 import React from 'react';
+// import Image from 'next/image'
 import * as Styles from './styles';
+import { ListItem } from '../../apis/getPokemonList'
 
 export type PokemonListItem = ListItem & {
   number: number;
