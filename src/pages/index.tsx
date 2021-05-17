@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next'
 import { getPoketmonList } from '../apis/getPokemonList';
 import { PokemonListItem } from '../components/Card';
 import { Cards } from '../components/Cards';
@@ -52,9 +53,10 @@ export const getStaticProps = async () => {
 
 // next.js + i18n  : getStaticProps 
 
-export const getStaticProps = async ({ locale: string; }) => ({
+
+export const getStaticProps: GetStaticProps = anync ({ locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['common']))
+    ...await serverSideTranslations(locale, ['common', 'footer']),
   }
 })
 
