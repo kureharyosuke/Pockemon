@@ -2,6 +2,11 @@ import { getPoketmonList } from '../apis/getPokemonList';
 import { PokemonListItem } from '../components/Card';
 import { Cards } from '../components/Cards';
 
+// next-i18next Setup
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+//
+
 import Head from 'next/head'
 
 interface HomeProps {
@@ -44,5 +49,16 @@ export const getStaticProps = async () => {
     }
   }
 }
+
+// next.js + i18n  : getStaticProps 
+
+export const getStaticProps = async ({ locale: string; }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common']))
+  }
+})
+
+
+
 
 export default Home;
