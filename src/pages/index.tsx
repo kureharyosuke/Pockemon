@@ -22,7 +22,7 @@ const Home = ({ pokemonList }: HomeProps) => {
     <Head>
         <title>{t('title') }</title>
     </Head>
-      {/* <Cards pokemonList={pokemonList}/> */}
+      <Cards pokemonList={pokemonList}/>
       <h1>{t('title')}</h1>
       <h2>{ t('description')}</h2>
       <button>{t('cards.button') }</button>
@@ -30,38 +30,44 @@ const Home = ({ pokemonList }: HomeProps) => {
   )
 }
 
-export const getStaticProps: GetStaticProps  = async ({ locale }) => ({
-    props: {
-        ...await serverSideTranslations(locale, ['common']),
-    },
-})
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   // console.log("locale of getStaticProps", locale);
-//   try {
-//     const response = await getPoketmonList()
-//     if (response?.results) {
-//       const pokemonList = response.results.map((item, index) => ({
-//         ...item,
-//         number: index + 1,
-//       }));
-
-//       return {
-//         props: {
-//           pokemonList,
-//         }
-//       }
-//     }
-//   } catch (error) {
-//     console.log('ERROR', error)
-//   }
-
+// export const getStaticProps: GetStaticProps = async ({ locale }) => {
+//   locale = locale ? locale as string : 'ja'
 //   return {
 //     props: {
-//       pokemonList: [],
-//     }
+//       ...(await serverSideTranslations(locale, ['common'])),
+//     },
 //   }
 // }
+
+export const getStaticProps: GetStaticProps = async ( {locale}) => {
+  // console.log("locale of getStaticProps", locale);
+  locale = locale ? locale as string : 'ja'
+  try {
+    const response = await getPoketmonList()
+    if (response?.results) {
+      const pokemonList = response.results.map((item, index) => ({
+        ...item,
+        number: index + 1,
+      }));
+
+      return {
+        props: {
+          pokemonList,
+            ...await serverSideTranslations(locale, ['common']),
+        }
+      }
+    }
+  } catch (error) {
+    console.log('ERROR', error)
+  }
+
+  return {
+    props: {
+      pokemonList: [],
+    ...await serverSideTranslations(locale, ['common']),
+    }
+  }
+}
 
 // next.js + i18n  : getStaticProps 
 

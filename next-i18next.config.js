@@ -1,8 +1,9 @@
 module.exports = {
   i18n: {
     defaultLocale: 'ja',
-    locales: ['ja', 'en', 'ko'],
+    locales: ['ja', 'en',],
     localePath: "public/locales",
+    // localeDetection: false,
     //  domains: [
     //   {
     //     domain: 'example.com/en',
