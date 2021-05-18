@@ -3,12 +3,16 @@ import { IMAGE_URL, MAX_POKEMON_COUNT, TITLE_IMAGE } from '../../constants/commo
 import React, { useEffect, useState, useCallback } from 'react'
 import { useRouter } from 'next/router'
 import * as Styles from './styles'
+import { useTranslation } from "next-i18next";
+
 
 interface CardsProps {
   pokemonList: PokemonListItem[];
 }
 
 export const Cards = ({ pokemonList }: CardsProps) => {
+  const { t } = useTranslation("common");
+
   const router = useRouter();
   const [translateX, setTranslateX] = useState<number>(0);
   const [cards, setCards] = useState<PokemonCard[]>([]);
@@ -56,8 +60,15 @@ export const Cards = ({ pokemonList }: CardsProps) => {
           </Styles.CardWrapper>
         ))}
       </Styles.Content>
-      <Styles.Text onClick={handleClickFindPokemon}>{'POKEMON SEARCH'}</Styles.Text>
+      <Styles.Text onClick={handleClickFindPokemon}>{t('title')}</Styles.Text>
+      <button>{t('title')}</button>
     </Styles.Container>
   )
 
 }
+
+// Cards.getInitialProps = () => ({
+//   namespacesRequired: ['common'],
+// })
+
+// export default withNamespaces('common')(Cards)

@@ -1,0 +1,11 @@
+{
+  "head": {
+    "title": "어서오세요. Next.js!"
+  },
+  "title": "안녕하세요",
+  "description": "검색해볼까요?",
+  "cards": {
+    "button": "포켓몬 검색"
+
+  }
+}

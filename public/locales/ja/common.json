@@ -3,5 +3,9 @@
     "title": "ようこそNext.jsへ!"
   },
   "title": "ようこそ",
-  "description": "編集してみましょう"
+  "description": "編集してみましょう",
+  "cards": {
+    "button": "ポケモン 検索"
+
+  }
 }
