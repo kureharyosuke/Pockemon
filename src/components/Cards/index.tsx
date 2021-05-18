@@ -60,8 +60,7 @@ export const Cards = ({ pokemonList }: CardsProps) => {
           </Styles.CardWrapper>
         ))}
       </Styles.Content>
-      <Styles.Text onClick={handleClickFindPokemon}>{t('title')}</Styles.Text>
-      <button>{t('title')}</button>
+      <Styles.Text onClick={handleClickFindPokemon}>{t('cards.button.pokemon')}{t('cards.button.search')}</Styles.Text>
     </Styles.Container>
   )
 

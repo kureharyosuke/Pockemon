@@ -5,7 +5,10 @@
   "title": "Welcome to",
   "description": "Get started by editing",
     "cards": {
-    "button": "Pokemon Search"
+    "button": {
+      "pokemon":"Pokemon", 
+      "search":"Search"
+    }
 
   }
 }
